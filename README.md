@@ -13,17 +13,21 @@ yarn install
 
 ## 구동
 
-##  start dev
+##  local serve
 ```
-yarn start:dev
+yarn serve:local
 ```
 
-##  start prod
+##  production serve
 ```
-yarn start:prod
+yarn serve:production
 ```
 
 ### Reactjs playground
 ~~~
-http://localhost:8080
+http://localhost:3000
 ~~~
+
+### 기술 스택
+react, typescript, webpack, eslint, prettier, emotion, antd
+
