@@ -13,8 +13,8 @@ const ListStyle = styled.div`
   }
   .ant-list-pagination {
     position: absolute;
-    width: 100%;
     bottom: 0;
+    width: 100%;
     text-align: center;
   }
 `;
@@ -24,7 +24,6 @@ interface NewsListProps {
 }
 
 const ArticleList: FC<NewsListProps> = ({ articles }) => {
-  console.log(articles);
   return (
     <ListStyle>
       <List
@@ -33,6 +32,7 @@ const ArticleList: FC<NewsListProps> = ({ articles }) => {
         pagination={{
           onChange: (page) => {
             console.log(page);
+            window.scrollTo(0, 0);
           },
           pageSize: 3,
           hideOnSinglePage: true,

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Layout } from 'antd';
+
 const { Footer } = Layout;
 
 const BlogFooterStyle = styled.div`

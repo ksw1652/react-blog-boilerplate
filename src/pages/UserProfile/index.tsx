@@ -1,7 +1,5 @@
 import React from 'react';
 
-const UserProfile: React.FC = () => {
-  return <div>This is User Profile Page</div>;
-};
+const UserProfile: React.FC = () => <div>This is User Profile Page</div>;
 
 export default UserProfile;
