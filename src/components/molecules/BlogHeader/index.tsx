@@ -17,16 +17,14 @@ interface PageHeaderProps {
   subTitle: string;
 }
 
-const BlogHeader: FC<PageHeaderProps> = ({ title, subTitle }) => {
-  return (
-    <HeaderWrapper>
-      <PageHeader
-        className="blog-page-header"
-        title={title}
-        subTitle={subTitle}
-      />
-    </HeaderWrapper>
-  );
-};
+const BlogHeader: FC<PageHeaderProps> = ({ title, subTitle }) => (
+  <HeaderWrapper>
+    <PageHeader
+      className="blog-page-header"
+      title={title}
+      subTitle={subTitle}
+    />
+  </HeaderWrapper>
+);
 
 export default BlogHeader;

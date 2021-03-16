@@ -12,11 +12,12 @@ interface BlogFooterProps {
   copyright: string;
 }
 
-const BlogFooter: FC<BlogFooterProps> = ({ ...props }) => {
+const BlogFooter: FC<BlogFooterProps> = ({...props}): React.ReactElement => {
+  const { copyright } = props;
   return (
     <BlogFooterStyle>
-      <Footer>{props.copyright}</Footer>
+      <Footer>{copyright}</Footer>
     </BlogFooterStyle>
-  );
+  )
 };
 export default BlogFooter;

@@ -32,10 +32,10 @@ const BlogDetail: FunctionComponent = () => {
   return (
     <BlogDetailStyle>
       <Article>
-        <Article.ArticleTitle title={article.title}/>
-        <Article.ArticleSubTitle subTitle={article.subTitle}/>
-        <Article.ArticleImage image={article.image}/>
-        <Article.ArticleContent content={article.content}/>
+        <Article.ArticleTitle title={article.title} />
+        <Article.ArticleSubTitle subTitle={article.subTitle} />
+        <Article.ArticleImage image={article.image} />
+        <Article.ArticleContent content={article.content} />
       </Article>
     </BlogDetailStyle>
   );

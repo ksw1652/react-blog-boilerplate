@@ -3,7 +3,7 @@ import ArticleImage from '@components/organisms/Article/ArticleImage';
 import ArticleContent from '@components/organisms/Article/ArticleContent';
 import ArticleSubTitle from '@components/organisms/Article/ArticleSubTitle';
 import ArticleTitle from '@components/organisms/Article/ArticleTitle';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const ArticleStyle = styled.article`
   width: 680px;
@@ -26,11 +26,7 @@ interface ArticleChildComponents {
 
 const Article: FC<ArticleProps> & ArticleChildComponents = ({
   children,
-}: ArticleProps): React.ReactElement => {
-  return (
-    <ArticleStyle>{children}</ArticleStyle>
-  );
-};
+}: ArticleProps): React.ReactElement => <ArticleStyle>{children}</ArticleStyle>;
 
 Article.ArticleTitle = ArticleTitle;
 Article.ArticleSubTitle = ArticleSubTitle;
