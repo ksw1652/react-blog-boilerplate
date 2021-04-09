@@ -4,17 +4,16 @@ import styled from '@emotion/styled';
 
 const ImageStyle = styled.section``;
 
-interface ImageProps {
+interface ArticleImageType {
   src: string;
 }
 
-interface ArticleImageType {
-  image: ImageProps;
-}
+const ArticleImage: FC<ArticleImageType> = ({ src }): React.ReactElement => {
+  return (
+    <ImageStyle>
+      <Image src={src} />
+    </ImageStyle>
+  );
+};
 
-const ArticleImage: FC<ArticleImageType> = ({ image }): React.ReactElement => (
-  <ImageStyle>
-    <Image src={image.src} />
-  </ImageStyle>
-);
 export default ArticleImage;

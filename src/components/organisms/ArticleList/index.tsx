@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
 import { Divider, List } from 'antd';
 
-import ArticleItem, {
-  ArticleItemType,
-} from '@components/molecules/ArticleItem';
+import ArticleItem from '@components/molecules/ArticleItem';
 import styled from '@emotion/styled';
+import { DataProps } from '@src/hooks/useArticleFetch';
 
 const ListStyle = styled.div`
   position: relative;
@@ -19,40 +18,42 @@ const ListStyle = styled.div`
   }
 `;
 
-interface NewsListProps {
-  articles: Array<ArticleItemType>;
-}
-
-const ArticleList: FC<NewsListProps> = ({ articles }) => (
-  <ListStyle>
-    <List
-      itemLayout="vertical"
-      size="large"
-      pagination={{
-        onChange: (page) => {
-          console.log(page);
-          window.scrollTo(0, 0);
-        },
-        pageSize: 3,
-        hideOnSinglePage: true,
-      }}
-      dataSource={articles}
-      renderItem={(item) => (
-        <>
-          <ArticleItem
-            articleId={item.articleId}
-            title={item.title}
-            subTitle={item.subTitle}
-            content={item.content}
-            userName={item.userName}
-            createdAt={item.createdAt}
-            avatar={item.avatar}
-          />
-          <Divider />
-        </>
-      )}
-    />
-  </ListStyle>
-);
+const ArticleList: FC<DataProps> = ({ articles, status, totalResults }) => {
+  return (
+    <ListStyle>
+      <List
+        itemLayout="vertical"
+        size="large"
+        pagination={{
+          position: 'bottom',
+          pageSize: 5,
+          total: totalResults,
+          showSizeChanger: false,
+          onChange: (page) => {
+            console.log('page::\n\n', page);
+            window.scrollTo(0, 0);
+          },
+        }}
+        dataSource={articles}
+        renderItem={(item, index) => (
+          <>
+            <ArticleItem
+              articleId={index}
+              title={item.title}
+              description={item.description}
+              content={item.content}
+              author={item.author}
+              publishedAt={item.publishedAt}
+              avatar={item.avatar}
+              url={item.url}
+              urlToImage={item.urlToImage}
+            />
+            <Divider />
+          </>
+        )}
+      />
+    </ListStyle>
+  );
+};
 
 export default ArticleList;

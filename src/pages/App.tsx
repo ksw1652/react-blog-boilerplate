@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
 import { Global } from '@emotion/react';
-import {connect} from 'react-redux';
+// import { connect } from 'react-redux';
 
 import GlobalStyle from '@styles/globalStyle';
 import BlogList from '@pages/BlogList';
@@ -12,7 +12,7 @@ import BlogManage from '@pages/BlogManage';
 import UserProfile from '@pages/UserProfile';
 import BlogHeader from '@components/molecules/BlogHeader';
 import BlogFooter from '@components/molecules/BlogFooter';
-import fetchArticles from "@src/action/fetchArticles";
+// import fetchArticles from '@src/action/fetchArticles';
 
 const { Content } = Layout;
 
@@ -37,16 +37,18 @@ const App: FunctionComponent = () => (
   </BrowserRouter>
 );
 
-const MapStateToProps = (state) => {
-  return {
-    articles: state.articles
-  }
-}
+export default App;
 
-const MapDispatchToProps = (dispatch) => {
-  return {
-    fetchArticles: () => dispatch(fetchArticles)
-  }
-}
-
-export default connect(MapStateToProps, MapDispatchToProps)(App);
+// const MapStateToProps = (state) => {
+//   return {
+//     articles: state.articles,
+//   };
+// };
+//
+// const MapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchArticles: () => dispatch(fetchArticles),
+//   };
+// };
+//
+// export default connect(MapStateToProps, MapDispatchToProps)(App);
